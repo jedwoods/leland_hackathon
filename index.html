@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard - SB Admin</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Network.io</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="https://rocketreach.co/resources/lp/find-accurate-emails-faster/?utm_term=how%20to%20find%20out%20someones%20email%20address&utm_campaign=google_nb_email_finder_us_desktop&utm_source=500&utm_medium=ppc&utm_content=how_to_find_out_someones_email_address&hsa_acc=3011440101&hsa_cam=11911381598&hsa_grp=119211045001&hsa_ad=693270736239&hsa_src=g&hsa_tgt=kwd-524025849&hsa_kw=how%20to%20find%20out%20someones%20email%20address&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAouG5BhDBARIsAOc08RSejUqAUPdnPLIbI3A60v4uRSxqNQ2_vBPeu6Pv1C8KYPObjWNMxrEaAvLiEALw_wcB">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Email Finding Tool
+                            </a>
+                            <a class="nav-link" href="https://www.joinleland.com/">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Networking Coaches
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Network
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <div class="row">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex align-items-stretch">
+                                <div class="card mb-4 w-100">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Area Chart Example
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                    </div>
+                                </div>          
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-envelope me-1"></i>
+                                        Email Sender
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="/send-email" method="POST">
+                                            <div class="mb-3">
+                                                <label for="TO: " class="form-label">Recipient</label>
+                                                <input type="text" class="form-control" id="recipient" name="recipient" placeholder="Enter the email recipient" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="emailSubject" class="form-label">Subject</label>
+                                                <input type="text" class="form-control" id="emailSubject" name="subject" placeholder="Enter the email subject" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="emailBody" class="form-label">Message</label>
+                                                <textarea class="form-control" id="emailBody" name="body" rows="5" placeholder="Write your message here" required></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Send Email</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body">
+                                <div class="container my-4">
+                                    <form id="addRowForm" class="row g-3">
+                                        <div class="col-md-2">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="position" class="form-label">Position</label>
+                                            <input type="text" class="form-control" id="position" placeholder="Enter position" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="company" class="form-label">Company</label>
+                                            <input type="text" class="form-control" id="company" placeholder="Enter company" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="date" class="form-label">Date</label>
+                                            <input type="date" class="form-control" id="date" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="responded" class="form-label">Responded</label>
+                                            <select id="responded" class="form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" id="addRowBtn" class="btn btn-primary">Add Row</button>
+                                        </div>
+                                    </form>
+                                
+                                    <!-- Table -->
+                                    <table class="table mt-4" id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Company</th>
+                                                <th>Email</th>
+                                                <th>Date</th>
+                                                <th>Responded</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Google</td>
+                                                <td>tiger.nixon@example.com</td>
+                                                <td>2024/04/12</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Accountant</td>
+                                                <td>Microsoft</td>
+                                                <td>garrett.winters@example.com</td>
+                                                <td>2024/07/18</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>Apple</td>
+                                                <td>ashton.cox@example.com</td>
+                                                <td>2024/03/25</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Amazon</td>
+                                                <td>cedric.kelly@example.com</td>
+                                                <td>2024/10/05</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Airi Satou</td>
+                                                <td>Accountant</td>
+                                                <td>Meta</td>
+                                                <td>airi.satou@example.com</td>
+                                                <td>2024/05/22</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brielle Williamson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>Netflix</td>
+                                                <td>brielle.williamson@example.com</td>
+                                                <td>2024/08/16</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Herrod Chandler</td>
+                                                <td>Sales Assistant</td>
+                                                <td>Adobe</td>
+                                                <td>herrod.chandler@example.com</td>
+                                                <td>2024/09/09</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rhona Davidson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>Salesforce</td>
+                                                <td>rhona.davidson@example.com</td>
+                                                <td>2024/06/30</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Colleen Hurst</td>
+                                                <td>Javascript Developer</td>
+                                                <td>IBM</td>
+                                                <td>colleen.hurst@example.com</td>
+                                                <td>2024/11/15</td>
+                                                <td>
+                                                    <select class="form-select responded-dropdown">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+        <script>
+            document.getElementById("addRowBtn").addEventListener("click", function () {
+                // Get input values
+                const name = document.getElementById("name").value;
+                const position = document.getElementById("position").value;
+                const company = document.getElementById("company").value;
+                const email = document.getElementById("email").value;
+                const date = document.getElementById("date").value;
+                const responded = document.getElementById("responded").value;
+            
+                // Validate inputs
+                if (!name || !position || !company || !email || !date) {
+                    alert("Please fill out all fields.");
+                    return;
+                }
+            
+                // Create a new row
+                const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+                const newRow = table.insertRow();
+            
+                newRow.innerHTML = `
+                    <td>${name}</td>
+                    <td>${position}</td>
+                    <td>${company}</td>
+                    <td>${email}</td>
+                    <td>${date}</td>
+                    <td>
+                        <select class="form-select responded-dropdown">
+                            <option value="yes" ${responded === "yes" ? "selected" : ""}>Yes</option>
+                            <option value="no" ${responded === "no" ? "selected" : ""}>No</option>
+                        </select>
+                    </td>
+                `;
+            
+                // Clear input fields
+                document.getElementById("addRowForm").reset();
+            });
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    </body>
+
+    
+</html>
